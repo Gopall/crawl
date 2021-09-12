@@ -4,6 +4,11 @@ Barachi
 Barachim are slow-moving, amphibious humanoids who can hop long distances.
 Their extended range of vision also allows them to be seen from further away.
 %%%%
+Centaur
+
+Swift, strong and bulky, Centaurs are particularly skilled with ranged
+weaponry.
+%%%%
 Deep Dwarf
 
 Deep Dwarves live underground and cannot regenerate health naturally, but they
