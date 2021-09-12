@@ -261,7 +261,7 @@ static const map<job_type, job_def> job_data =
 { JOB_DELVER, {
     "De", "Delver",
     4, 2, 6,
-    { SP_FELID, SP_SPRIGGAN, SP_KOBOLD, SP_VAMPIRE, SP_GNOLL },
+    { SP_FELID, SP_SPRIGGAN, SP_CENTAUR, SP_KOBOLD, SP_VAMPIRE, SP_GNOLL },
     { },
     { "leather armour", "scroll of fog", "scroll of magic mapping",
       "scroll of fear", "potion of haste", "wand of digging charges:3" },
