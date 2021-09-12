@@ -266,15 +266,16 @@ Willpower
 
 Size
   Different species have different sizes: Spriggans and Felids are very small;
-  Kobolds are small; Ogres and Trolls are large; Nagas and Palentongas are large
-  with a medium torso; all other species are medium-sized. Many transmutations
-  will change your size. Size affects your evasion: the smaller your character,
-  the more evasive it is. On the other hand, characters of larger than medium
-  size do not suffer the usual attack penalties when standing in shallow water.
-  Characters of smaller than medium size will have problems with some larger
-  weapons. Very small characters and large characters are not able to use most
-  types of armour. Players and monsters can only constrict foes of the same size
-  or smaller. In the dungeon you can also meet tiny, very large and giant foes.
+  Halflings and Kobolds are small; Ogres and Trolls are large; Nagas and
+  Palentongas are large with a medium torso; all other species are medium-sized.
+  Many transmutations will change your size too. Size affects your evasion: the
+  smaller your character the more evasive it is. On the other hand, characters
+  of larger than medium size do not suffer the usual attack penalties when
+  standing in shallow water. Characters of smaller than medium size will have
+  problems with some larger weapons. Very small characters and large characters
+  are not able to use most types of armour. Players and monsters can only
+  constrict foes of the same size or smaller. In the dungeon you can also meet
+  tiny, very large and giant creatures.
 
 Stealth
   High stealth allows your character to move through the dungeon undetected.
@@ -1597,6 +1598,18 @@ Draconians (Dr)
 
   Draconian colours are detailed below, in the subsection titled
   `Draconian types`_.
+
+Halflings (Ha)
+  Halflings, who are named for being about half the size of Humans, live in
+  small villages. They live simple lives and have simple interests. Sometimes a
+  particularly restless Halfling will leave their village in search of adventure.
+
+  Halflings are very small but surprisingly hardy for their size, even having an
+  innate resistance to mutagenic effects. They can use short blades and shields
+  very well, are passable with long blades, and excel in ranged combat with
+  slings. They are also very stealthy and dextrous, but are poor at magic
+  (except for translocations and air magic). They advance in levels as rapidly
+  as Humans. Halflings cannot wield large weapons.
 
 Trolls (Tr)
   Trolls are monstrous creatures with powerful claws. They have thick, knobbly
