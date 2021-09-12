@@ -1688,6 +1688,16 @@ Demonspawn (Ds)
   than Humans, although they are talented at some forms of magic. They learn
   Invocations especially quickly, although the good gods will not accept their
   worship due to their unholy nature.
+  
+Centaurs (Ce)
+  The Centaurs are another species of hybrid creatures: horses with Human
+  torsos. They usually live in forests, surviving by hunting.
+
+  Centaurs can move very quickly on their four legs, and are excellent with bows
+  and other missile weapons; they are also reasonable at fighting in general
+  while being slow learners at specific weapon skills. They advance quite slowly
+  in experience levels and are rather sub-par at using magic. Because of their
+  body shape, they receive reduced protection from the body armour they wear.
 
 Djinn (Dj)
   Djinn are beings of smokeless fire. They enter the world spontaneously and
