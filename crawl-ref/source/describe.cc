@@ -3364,6 +3364,26 @@ static void _get_spell_description(const spell_type spell,
 
     if (mon_owner)
     {
+        if (spell == SPELL_CONJURE_LIVING_SPELLS)
+        {
+            const spell_type living_spell = living_spell_type_for(mon_owner->type);
+            description += make_stringf("\n%s creates living %s spells.\n",
+                                        uppercase_first(mon_owner->full_name(DESC_A)).c_str(),
+                                        spell_title(living_spell));
+        } else if (spell == SPELL_QUICKSILVER_BOLT)
+        {
+            if (player_is_debuffable())
+            {
+                description += make_stringf("\nIf you are struck by this,"
+                                            " you will no longer be %s.\n",
+                                            describe_player_cancellation(true).c_str());
+            }
+            else
+                description += "\nYou currently have no enchantments that could be"
+                               " removed by this.\n";
+
+        }
+
         const int hd = mon_owner->spell_hd();
         const int range = mons_spell_range_for_hd(spell, hd);
         description += "\nRange : ";

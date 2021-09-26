@@ -1507,15 +1507,12 @@ tileidx_t tileidx_monster_base(int type, int mon_id, bool in_water, int colour,
         int offset = 0;
         switch (colour)
         {
-        case BLUE:          offset = 0; break;
-        case YELLOW:        offset = 1; break;
-        case GREEN:         offset = 2; break;
-        case LIGHTGREY:     offset = 3; break;
-        case LIGHTMAGENTA:  offset = 4; break;
-        case CYAN:          offset = 5; break;
-        case MAGENTA:       offset = 6; break;
-        case LIGHTRED:      offset = 7; break;
-        case WHITE:         offset = 8; break;
+        case LIGHTRED:      offset = 0; break;
+        case WHITE:         offset = 1; break;
+        case BLUE:          offset = 2; break; // black
+        case GREEN:         offset = 3; break;
+        case MAGENTA:       offset = 4; break;
+        case YELLOW:        offset = 5; break;
         }
 
         return TILEP_MONS_TIAMAT + offset;
@@ -3066,7 +3063,7 @@ tileidx_t tileidx_bolt(const bolt &bolt)
 
     case GREEN:
         if (bolt.name == "sting")
-            return TILE_BOLT_POISON_ARROW + dir;
+            return TILE_BOLT_STING;
         break;
 
     case LIGHTGREEN:
@@ -3109,7 +3106,7 @@ tileidx_t vary_bolt_tile(tileidx_t tile, int dist)
     case TILE_BOLT_MAGIC_DART:
     case TILE_BOLT_SANDBLAST:
     case TILE_BOLT_STING:
-        return tile + dist % tile_main_count(tile);
+        return tile + (dist - 1) % tile_main_count(tile);
     case TILE_BOLT_FLAME:
     case TILE_BOLT_IRRADIATE:
         return tile + ui_random(tile_main_count(tile));
@@ -3721,6 +3718,15 @@ tileidx_t tileidx_ability(const ability_type ability)
     // General divine (pseudo) abilities.
     case ABIL_RENOUNCE_RELIGION:
         return TILEG_ABILITY_RENOUNCE_RELIGION;
+
+#ifdef WIZARD
+    case ABIL_WIZ_BUILD_TERRAIN:
+        return TILEG_ABILITY_WIZ_BUILD_TERRAIN;
+    case ABIL_WIZ_SET_TERRAIN:
+        return TILEG_ABILITY_WIZ_SET_TERRAIN;
+    case ABIL_WIZ_CLEAR_TERRAIN:
+        return TILEG_ABILITY_WIZ_CLEAR_TERRAIN;
+#endif
 
     default:
         return TILEG_ERROR;
