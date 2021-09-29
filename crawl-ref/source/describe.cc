@@ -577,7 +577,7 @@ static string _randart_descrip(const item_def &item)
         { ARTP_CAUSE_TELEPORTATION, "It may teleport you next to monsters.", false},
         { ARTP_PREVENT_TELEPORTATION, "It prevents most forms of teleportation.",
           false},
-        { ARTP_ANGRY,  "It lets you go berserk by making a melee attack (%d% chance).", false},
+        { ARTP_ANGRY,  "It berserks you when you make melee attacks (%d% chance).", false},
         { ARTP_CLARITY, "It protects you against confusion.", false},
         { ARTP_CONTAM, "It causes magical contamination when unequipped.", false},
         { ARTP_RMSL, "It protects you from missiles.", false},
@@ -3919,13 +3919,15 @@ static string _monster_attacks_description(const monster_info& mi)
             continue;
         }
 
+        int dam = attack.damage;
+
         // Damage is listed in parentheses for attacks with a flavour
         // description, but not for plain attacks.
         bool has_flavour = !_flavour_base_desc(attack.flavour).empty();
         const string damage_desc =
             make_stringf("%sfor up to %d damage%s%s%s",
                          has_flavour ? "(" : "",
-                         attack.damage,
+                         dam,
                          attack_count.second > 1 ? " each" : "",
                          weapon_note.c_str(),
                          has_flavour ? ")" : "");
@@ -3948,6 +3950,12 @@ static string _monster_attacks_description(const monster_info& mi)
                                                   "; and ", "; ");
         _describe_mons_to_hit(mi, result);
         result << ".\n";
+    }
+
+    if (mons_class_flag(mi.type, M_ARCHER))
+    {
+        result << make_stringf("It can deal up to %d extra damage when attacking with ranged weaponry.\n",
+                                archer_bonus_damage(mi.hd));
     }
 
     if (mi.type == MONS_ROYAL_JELLY)
@@ -4252,6 +4260,8 @@ string _monster_habitat_description(const monster_info& mi)
     const monster_type type = mons_is_job(mi.type)
                               ? mi.draco_or_demonspawn_subspecies()
                               : mi.type;
+    if (mons_class_is_stationary(type))
+        return "";
 
     switch (mons_habitat_type(type, mi.base_type))
     {
